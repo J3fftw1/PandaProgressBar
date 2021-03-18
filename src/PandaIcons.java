@@ -3,6 +3,7 @@ import javax.swing.Icon;
 
 
 public interface PandaIcons {
-    Icon CAT_ICON = IconLoader.getIcon("/rsz_panda_32.png");
-    Icon RCAT_ICON = IconLoader.getIcon("/rsz_rpanda_32.png");
+
+    Icon PANDA_ICON = IconLoader.getIcon("/rsz_panda_32.png");
+    Icon RPANDA_ICON = IconLoader.getIcon("/rsz_rpanda_32.png");
 }
