@@ -1,5 +1,7 @@
-# NyanProgressBar
+# PandaProgressBar
 
-A pretty nyan cat progress bar for IntelliJ IDEA and other JetBrains IDEs.
+A pretty panda progress bar for IntelliJ IDEA and other JetBrains IDEs.
 
-[Page on plugin repository site](https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar)
+Inspiration of this plugin came from [Nyan Progress Bar GitHub](https://github.com/batya239/NyanProgressBar)
+
+[Nyan Progress Bar Jet Brains](https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar)
