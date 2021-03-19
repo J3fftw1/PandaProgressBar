@@ -1,17 +1,20 @@
 <idea-plugin>
   <id>panda.bar</id>
   <name>Panda Progress Bar</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <idea-version since-build="192"/>
   <vendor email="jeffrey@🐼.kz">Jeffrey K</vendor>
 
   <description><![CDATA[
-      Pretty progress bars with nyan cat for IJ based IDEs.
+      Panda Progress bar is plugin for IJ baSED IDEs,<br>
+      This plugin is an adaptation from Nyan Progress Bar.<br>
+      All credits go to batya239 the creator of Nyan Progress Bar
     ]]></description>
 
   <change-notes><![CDATA[
       <em>1.0 First launch</em><br>
-      <em>1.1 Added pluginIcon.svg</em>
+      <em>1.1 Added pluginIcon.svg</em><br>
+      <em>1.2 Changed description</em>
     ]]>
   </change-notes>
 

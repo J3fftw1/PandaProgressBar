@@ -82,14 +82,16 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
         int height = component.getPreferredSize().height;
         if (isUnEven(component.getHeight() - height)) height++;
 
-        LinearGradientPaint baseBambooPaint = new LinearGradientPaint(0, JBUI.scale(2), 0, height - JBUI.scale(6),
-            new float[] {ONE_OVER_SEVEN * 1, ONE_OVER_SEVEN * 2, ONE_OVER_SEVEN * 3,
-                ONE_OVER_SEVEN * 4, ONE_OVER_SEVEN * 5, ONE_OVER_SEVEN * 6, ONE_OVER_SEVEN * 7
-            },
-            new Color[] {ColorHexUtil.fromHex("#2c6705"), ColorHexUtil.fromHex("#377c07"),
-                ColorHexUtil.fromHex("#538d1a"), ColorHexUtil.fromHex("#6e9a42"), ColorHexUtil.fromHex("#e2dbac"),
-                ColorHexUtil.fromHex("#aec957"), ColorHexUtil.fromHex("#aec957")}
-        );
+        LinearGradientPaint baseBambooPaint =
+            new LinearGradientPaint(0, JBUI.scale(2), 0, height - JBUI.scale(6),
+                new float[] {ONE_OVER_SEVEN * 1, ONE_OVER_SEVEN * 2, ONE_OVER_SEVEN * 3,
+                    ONE_OVER_SEVEN * 4, ONE_OVER_SEVEN * 5, ONE_OVER_SEVEN * 6, ONE_OVER_SEVEN * 7
+                },
+                new Color[] {ColorHexUtil.fromHex("#2c6705"), ColorHexUtil.fromHex("#377c07"),
+                    ColorHexUtil.fromHex("#538d1a"), ColorHexUtil.fromHex("#6e9a42"), ColorHexUtil.fromHex("#e2dbac"),
+                    ColorHexUtil.fromHex("#aec957"), ColorHexUtil.fromHex("#aec957")
+                }
+            );
 
         graphics2D.setPaint(baseBambooPaint);
 
@@ -103,8 +105,10 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
 
         final float scale1 = JBUI.scale(8);
         final float scale2 = JBUI.scale(9);
-        final Area containingRoundRect = new Area(new RoundRectangle2D.Float(1f, 1f, width - 2f, height - 2f, scale1,
-            scale1));
+        final Area containingRoundRect =
+            new Area(new RoundRectangle2D.Float(1f, 1f, width - 2f, height - 2f, scale1, scale1)
+            );
+
         graphics2D.fill(containingRoundRect);
         graphics2D.setPaint(old);
         offset = (offset + 1) % getPeriodLength();
@@ -116,6 +120,7 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
             offset2 = width - JBUI.scale(15);
             velocity = -1;
         }
+
         Area area = new Area(new Rectangle2D.Float(0, 0, width, height));
         area.subtract(new Area(new RoundRectangle2D.Float(1f, 1f, width - 2f, height - 2f, scale1, scale1)));
         graphics2D.setPaint(Gray._128);
@@ -128,8 +133,11 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
         graphics2D.setPaint(background);
         if (component.isOpaque()) graphics2D.fill(area);
 
-        Icon scaledIcon = velocity > 0 ? ((ScalableIcon) PandaIcons.PANDA_ICON) :
-            ((ScalableIcon) PandaIcons.RPANDA_ICON);
+        Icon scaledIcon = velocity > 0 ?
+            ((ScalableIcon) PandaIcons.PANDA_ICON) :
+            ((ScalableIcon) PandaIcons.RPANDA_ICON
+            );
+
         scaledIcon.paintIcon(progressBar, graphics2D, offset2 - JBUI.scale(10), -JBUI.scale(6));
 
         graphics2D.draw(new RoundRectangle2D.Float(1f, 1f, width - 2f - 1f, height - 2f - 1f, scale1, scale1));
@@ -163,6 +171,7 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
         Insets border = progressBar.getInsets(); // area for border
         int width = progressBar.getWidth();
         int height = progressBar.getPreferredSize().height;
+
         if (isUnEven(component.getHeight() - height)) height++;
 
         int barRectWidth = width - (border.right + border.left);
@@ -190,13 +199,15 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
         graphics2D.fill(new RoundRectangle2D.Float(scale3, scale3, width - 2f * scale3 - scale3,
             height - 2f * scale3 - scale3, scale1, scale1)
         );
-        graphics2D.setPaint(new LinearGradientPaint(0, JBUI.scale(2), 0, height - JBUI.scale(6),
-            new float[] {ONE_OVER_SEVEN * 1, ONE_OVER_SEVEN * 2, ONE_OVER_SEVEN * 3,
-                ONE_OVER_SEVEN * 4, ONE_OVER_SEVEN * 5, ONE_OVER_SEVEN * 6, ONE_OVER_SEVEN * 7
-            },
-            new Color[] {ColorHexUtil.fromHex("#2c6705"), ColorHexUtil.fromHex("#377c07"),
-                ColorHexUtil.fromHex("#538d1a"), ColorHexUtil.fromHex("#6e9a42"), ColorHexUtil.fromHex("#e2dbac"),
-                ColorHexUtil.fromHex("#aec957"), ColorHexUtil.fromHex("#aec957")})
+        graphics2D.setPaint(
+            new LinearGradientPaint(0, JBUI.scale(2), 0, height - JBUI.scale(6),
+                new float[] {ONE_OVER_SEVEN * 1, ONE_OVER_SEVEN * 2, ONE_OVER_SEVEN * 3,
+                    ONE_OVER_SEVEN * 4, ONE_OVER_SEVEN * 5, ONE_OVER_SEVEN * 6, ONE_OVER_SEVEN * 7
+                },
+                new Color[] {ColorHexUtil.fromHex("#2c6705"), ColorHexUtil.fromHex("#377c07"),
+                    ColorHexUtil.fromHex("#538d1a"), ColorHexUtil.fromHex("#6e9a42"), ColorHexUtil.fromHex("#e2dbac"),
+                    ColorHexUtil.fromHex("#aec957"), ColorHexUtil.fromHex("#aec957")
+                })
         );
 
         PandaIcons.PANDA_ICON.paintIcon(progressBar, graphics2D, amountFull - JBUI.scale(10), -JBUI.scale(6));
@@ -215,38 +226,30 @@ public class PandaProgressBarUi extends BasicProgressBarUI {
     }
 
     private void paintString(Graphics graphics, int x, int y, int w, int h, int fillStart, int amountFull) {
-        if (!(graphics instanceof Graphics2D)) {
-            return;
-        }
+        if (!(graphics instanceof Graphics2D)) return;
+
 
         Graphics2D graphics2D = (Graphics2D) graphics;
         String progressString = progressBar.getString();
         graphics2D.setFont(progressBar.getFont());
-        Point renderLocation = getStringPlacement(graphics2D, progressString,
-            x, y, w, h);
+        Point renderLocation = getStringPlacement(graphics2D, progressString, x, y, w, h);
         Rectangle oldClip = graphics2D.getClipBounds();
 
         if (progressBar.getOrientation() == SwingConstants.HORIZONTAL) {
             graphics2D.setColor(getSelectionBackground());
-            SwingUtilities2.drawString(progressBar, graphics2D, progressString,
-                renderLocation.x, renderLocation.y);
+            SwingUtilities2.drawString(progressBar, graphics2D, progressString, renderLocation.x, renderLocation.y);
             graphics2D.setColor(getSelectionForeground());
             graphics2D.clipRect(fillStart, y, amountFull, h);
-            SwingUtilities2.drawString(progressBar, graphics2D, progressString,
-                renderLocation.x, renderLocation.y);
+            SwingUtilities2.drawString(progressBar, graphics2D, progressString, renderLocation.x, renderLocation.y);
         } else { // VERTICAL
             graphics2D.setColor(getSelectionBackground());
-            AffineTransform rotate =
-                AffineTransform.getRotateInstance(Math.PI / 2);
+            AffineTransform rotate = AffineTransform.getRotateInstance(Math.PI / 2);
             graphics2D.setFont(progressBar.getFont().deriveFont(rotate));
-            renderLocation = getStringPlacement(graphics2D, progressString,
-                x, y, w, h);
-            SwingUtilities2.drawString(progressBar, graphics2D, progressString,
-                renderLocation.x, renderLocation.y);
+            renderLocation = getStringPlacement(graphics2D, progressString, x, y, w, h);
+            SwingUtilities2.drawString(progressBar, graphics2D, progressString, renderLocation.x, renderLocation.y);
             graphics2D.setColor(getSelectionForeground());
             graphics2D.clipRect(x, fillStart, w, amountFull);
-            SwingUtilities2.drawString(progressBar, graphics2D, progressString,
-                renderLocation.x, renderLocation.y);
+            SwingUtilities2.drawString(progressBar, graphics2D, progressString, renderLocation.x, renderLocation.y);
         }
         graphics2D.setClip(oldClip);
     }
