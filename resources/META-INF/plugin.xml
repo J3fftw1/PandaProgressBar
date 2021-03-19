@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>panda.bar</id>
   <name>Panda Progress Bar</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <idea-version since-build="192"/>
   <vendor email="jeffrey@🐼.kz">Jeffrey K</vendor>
 
@@ -10,7 +10,8 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      <em>1.0 First launch</em>
+      <em>1.0 First launch</em><br>
+      <em>1.1 Added pluginIcon.svg</em>
     ]]>
   </change-notes>
 
